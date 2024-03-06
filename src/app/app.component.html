@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <button mat-icon-button (click)="sidenav.toggle();">
+    <button mat-icon-button (click)="collapsed.set(!collapsed())">
       <mat-icon>
         menu
       </mat-icon>
@@ -10,14 +10,12 @@
 </mat-toolbar>
 <mat-sidenav-container>
   <mat-sidenav #sidenav mode="side" opened>
-    <mat-nav-list>
-      <a mat-list-item>Home</a>
-      <a mat-list-item>About</a>
-      <a mat-list-item>Products</a>
-      <a mat-list-item>Nothing</a>
-    </mat-nav-list>
+    <app-youtube-studio-sidenav
+    [collapsed] = "collapsed()"
+    >
+    </app-youtube-studio-sidenav>
   </mat-sidenav>
-  <mat-sidenav-content>
+  <mat-sidenav-content [ngStyle]="{'margin-left': collapsed() ? '13em' : '6em'}">
     <div style="height: 90vh;">
       <router-outlet />
     </div>

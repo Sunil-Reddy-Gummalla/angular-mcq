@@ -10,11 +10,13 @@ import {MatIconModule} from '@angular/material/icon';
 import { HomeComponent } from './home/home.component';
 import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
+import { YoutubeStudioSidenavComponent } from './youtube-studio-sidenav/youtube-studio-sidenav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    YoutubeStudioSidenavComponent
   ],
   imports: [
     BrowserModule,
